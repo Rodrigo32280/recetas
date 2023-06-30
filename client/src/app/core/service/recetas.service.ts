@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import config from 'config/config';
 import {BehaviorSubject, Observable} from 'rxjs'
 
-
 const idReceta: number =0;
 
 @Injectable({
@@ -11,8 +10,6 @@ const idReceta: number =0;
 })
 export class RecetasService {
   private URL_datosRecetas: string = config.URL_API_BASE + 'receta';
-
-
   almacenadorD!: any[];
 
   //BehaviorSubject para obtener el ID de la receta
@@ -25,8 +22,6 @@ export class RecetasService {
   setSelectIdReceta(_idReceta: number){
     this.idReceta$.next(_idReceta);
   }
-
-
 
   constructor(private http: HttpClient) {}
   getRecetas() {
