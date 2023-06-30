@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import config from 'config/config';
 import {BehaviorSubject, Observable} from 'rxjs'
 
-
 const idReceta: number =0;
 
 @Injectable({
