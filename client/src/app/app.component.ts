@@ -22,7 +22,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   showLoading: boolean = true;
 
-  constructor(public srvSesion: SesionService) {}
+  private destroy$ = new Subject<any>();
+  myForm!: FormGroup;
+  dataReceta: any = {};
+
+  constructor(
+    public srvSesion: SesionService,
+    private srvRecetas: RecetasService,
+    public fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.srvSesion.selectSesion$.pipe(takeUntil(this.elDestructor$)).subscribe({
