@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "build": "babel src -d lib"
   },
   "author": "Ruben Valencia",
   "license": "MIT",
@@ -21,6 +22,10 @@
     "sweetalert2": "^11.7.11"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "nodemon": "^2.0.22"
   }
 }

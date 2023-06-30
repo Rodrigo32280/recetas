@@ -77,4 +77,4 @@ INSERT INTO  alimentos.usuario(
     str_password,
 )
 VALUES
-('admin', 'admin23');
+('rodrigo', 'rodd');
