@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import config from 'config/config';
-import {BehaviorSubject, Observable} from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs';
 
-const idReceta: number =0;
+const idReceta: number = 0;
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecetasService {
   private URL_datosRecetas: string = config.URL_API_BASE + 'receta';
+
   almacenadorD!: any[];
 
   //BehaviorSubject para obtener el ID de la receta
@@ -19,7 +20,7 @@ export class RecetasService {
     return this.idReceta$.asObservable();
   }
 
-  setSelectIdReceta(_idReceta: number){
+  setSelectIdReceta(_idReceta: number) {
     this.idReceta$.next(_idReceta);
   }
 
@@ -37,17 +38,18 @@ export class RecetasService {
   getRecetaId(id: number) {
     return this.http.get<any>(`${this.URL_datosRecetas}/${id}`, {
       withCredentials: true,
-    })
+    });
   }
 
   deleteRecetas(id: number) {
     console.log(id);
-    return this.http.delete<any>(
-      `${this.URL_datosRecetas}/${id}`,
-      { 
-        withCredentials: true 
-      }
-    );
-
+    return this.http.delete<any>(`${this.URL_datosRecetas}/${id}`, {
+      withCredentials: true,
+    });
+  }
+  crearReceta(receta: any) {
+    return this.http.post<any>(this.URL_datosRecetas, receta, {
+      withCredentials: true,
+    });
   }
 }
