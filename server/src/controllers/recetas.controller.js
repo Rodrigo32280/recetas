@@ -47,26 +47,24 @@ export const createReceta = async (req, res) => {
   console.log("ingreso a createReceta");
   console.log(req);
   try {
-    // const {
-    //   str_nombre,
-    //   str_image,
-    //   str_preparacion,
-    //   str_dificultad,
-    //   usuarioId,
-    // } = req.body;
-
     const {
-      str_nombre,
-      str_image,
-      str_preparacion,
-      str_dificultad,
+      str_receta_nombre,
+      str_autor_nombre,
+      str_autor_telefono,
+      str_autor_correo,
+      str_receta_image,
+      str_receta_preparacion,
+      str_receta_dificultad,
       usuarioId,
     } = req.body;
     const receta = await Receta.create({
-      str_nombre,
-      str_image,
-      str_preparacion,
-      str_dificultad,
+      str_receta_nombre,
+      str_autor_nombre,
+      str_autor_telefono,
+      str_autor_correo,
+      str_receta_image,
+      str_receta_preparacion,
+      str_receta_dificultad,
       usuarioId,
     });
     res.json({
