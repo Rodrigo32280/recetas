@@ -2,7 +2,7 @@ import express from "express";
 import usuarioRautes from "./routes/usuarios.routes.js";
 import recetaRoutes from "./routes/recetas.routes.js";
 import cors from "cors";
-
+//Seguido
 const app = express();
 
 // mideleware
