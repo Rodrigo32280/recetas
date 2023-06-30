@@ -26,8 +26,6 @@ export class RecetasService {
     this.idReceta$.next(_idReceta);
   }
 
-
-
   constructor(private http: HttpClient) {}
   getRecetas() {
     return this.http.get<any>(this.URL_datosRecetas, { withCredentials: true });
