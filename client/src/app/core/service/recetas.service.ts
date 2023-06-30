@@ -10,8 +10,6 @@ const idReceta: number =0;
 })
 export class RecetasService {
   private URL_datosRecetas: string = config.URL_API_BASE + 'receta';
-
-
   almacenadorD!: any[];
 
   //BehaviorSubject para obtener el ID de la receta
